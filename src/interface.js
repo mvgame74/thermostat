@@ -1,13 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const updateTemperature = () => {
     document.querySelector('#temperature').innerText = thermostat.temperature;
-    if (thermostat.energyUsage() === 'low-usage') {
-      document.querySelector('#temperature').style.color = 'green';
-    } else if (thermostat.energyUsage() === 'medium-usage') {
-      document.querySelector('#temperature').style.color = 'black';
-    } else {
-      document.querySelector('#temperature').style.color = 'red';
-    }
+    document.querySelector('#temperature').className = thermostat.energyUsage();
   }
 
   const thermostat = new Thermostat();
