@@ -79,7 +79,7 @@ describe('Thermostat', () => {
   describe('displaying usage levels', ()=> {
     describe('when the temperature is below 18 degrees', ()=> {
       it('is considered low-usage', ()=> {
-        for(let i=0; i<3;i++) {
+        for(let i = 0; i < 3;i++) {
           thermostat.down();
         }
         expect(thermostat.energyUsage()).toEqual('low-usage');
@@ -92,8 +92,8 @@ describe('Thermostat', () => {
     });
     describe('when the temperature is anything else', ()=> {
       it('is considered high-usage', ()=> {
-        thermostat.isPowerSavingMode = false;
-        for (let i=0; i<6; i++) {
+        thermostat.powerSavingMode = false;
+        for (let i = 0; i < 6; i++) {
           thermostat.up();
         }
         expect(thermostat.energyUsage()).toEqual('high-usage');
